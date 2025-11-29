@@ -1,0 +1,336 @@
+/* Design System & Global Styles */
+:root {
+    --bg-color: #343541;
+    --chat-bg: #444654;
+    --sidebar-bg: #202123;
+    --text-primary: #ECECF1;
+    --text-secondary: #C5C5D2;
+    --input-bg: #40414F;
+    --border-color: #565869;
+    --accent-color: #10a37f;
+    --accent-hover: #1a7f64;
+    --error-color: #ef4146;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--bg-color); 
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--input-bg);
+}
+
+.divider {
+    margin: 1.5rem 0;
+    position: relative;
+    text-align: center;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+
+.divider span {
+    background-color: var(--bg-color);
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.chat-layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-right: 1px solid #000;
+}
+
+.new-chat-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    background: transparent;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.new-chat-btn:hover {
+    background-color: var(--input-bg);
+}
+
+.history-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.history-item {
+    padding: 10px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-item:hover {
+    background-color: #2A2B32;
+}
+
+.nav-links {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px;
+    color: var(--text-secondary);
+    border-radius: 4px;
+}
+
+.nav-item:hover {
+    background-color: #2A2B32;
+}
+
+.main-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 120px;
+}
+
+.message {
+    display: flex;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.message.ai {
+    background-color: var(--chat-bg);
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.avatar.user {
+    background-color: #5436DA;
+    color: white;
+}
+
+.avatar.ai {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.message-content {
+    line-height: 1.6;
+    color: var(--text-primary);
+    max-width: 800px;
+}
+
+.input-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background-image: linear-gradient(180deg, rgba(53,55,64,0), var(--bg-color) 20%);
+    display: flex;
+    justify-content: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    max-width: 768px;
+    background-color: var(--input-bg);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(32,33,35,0.5);
+    display: flex;
+    align-items: center;
+}
+
+.input-box textarea {
+    background: transparent;
+    border: none;
+    padding: 12px 40px 12px 16px;
+    height: 50px;
+    resize: none;
+    max-height: 200px;
+    overflow-y: hidden;
+}
+
+.input-box textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.send-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 5px;
+}
+
+.send-btn:hover {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; 
+    }
+    .card {
+        padding: 1rem;
+    }
+}

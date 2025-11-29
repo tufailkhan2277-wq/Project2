@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chat - AI Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chat-layout">
+        <aside class="sidebar">
+            <button class="new-chat-btn">
+                <span>+</span> New chat
+            </button>
+
+            <div class="history-list">
+                <div class="history-item">Previous Conversation 1</div>
+                <div class="history-item">Coding Help</div>
+                <div class="history-item">Recipe Ideas</div>
+            </div>
+
+            <div class="nav-links">
+                <a href="contact.html" class="nav-item">Help & FAQ</a>
+                <a href="index.html" class="nav-item">Log out</a>
+            </div>
+        </aside>
+
+        <main class="main-chat">
+            <div class="chat-container" id="chatContainer">
+                <div class="message ai">
+                    <div class="avatar ai">AI</div>
+                    <div class="message-content">
+                        Hello! I'm your AI assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-box">
+                    <textarea id="userInput" placeholder="Send a message..."></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
